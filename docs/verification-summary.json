@@ -1,0 +1,150 @@
+{
+  "date": "2026-10-07",
+  "package": "0.1.0",
+  "tests": {
+    "core": 16,
+    "generation": 111,
+    "backup_retention": 22,
+    "failures": 0
+  },
+  "bundle_sha256": "f9bdf66cfaabb28efdb53c289d60b39748796c5e810e9c7350c950ef9abb0f98",
+  "source_rebuild_bundle_match": true,
+  "checks": {
+    "direct_api_1.19.0": {
+      "host": "1.19.0",
+      "checks": [
+        "status",
+        "native settings shape",
+        "lazy theme hydration",
+        "manifest order",
+        "native tokenizer equality",
+        "library revision",
+        "backup roundtrip",
+        "chat search",
+        "native generation handler with local mock provider",
+        "idempotency",
+        "durable save marker",
+        "stale native save rejection",
+        "cancel-after-save",
+        "CSRF"
+      ],
+      "provider": "local mock; no real model credentials used"
+    },
+    "direct_api_1.18.0": {
+      "host": "1.18.0",
+      "checks": [
+        "status",
+        "native settings shape",
+        "lazy theme hydration",
+        "manifest order",
+        "native tokenizer equality",
+        "library revision",
+        "backup roundtrip",
+        "chat search",
+        "native generation handler with local mock provider",
+        "idempotency",
+        "durable save marker",
+        "stale native save rejection",
+        "cancel-after-save",
+        "CSRF"
+      ],
+      "provider": "local mock; no real model credentials used"
+    },
+    "docker_api_1.19.0": {
+      "host": "1.19.0",
+      "checks": [
+        "status",
+        "native settings shape",
+        "lazy theme hydration",
+        "manifest order",
+        "native tokenizer equality",
+        "library revision",
+        "backup roundtrip",
+        "chat search",
+        "native generation handler with local mock provider",
+        "idempotency",
+        "durable save marker",
+        "stale native save rejection",
+        "cancel-after-save",
+        "CSRF"
+      ],
+      "provider": "local mock; no real model credentials used"
+    },
+    "docker_api_1.18.0": {
+      "host": "1.18.0",
+      "checks": [
+        "status",
+        "native settings shape",
+        "lazy theme hydration",
+        "manifest order",
+        "native tokenizer equality",
+        "library revision",
+        "backup roundtrip",
+        "chat search",
+        "native generation handler with local mock provider",
+        "idempotency",
+        "durable save marker",
+        "stale native save rejection",
+        "cancel-after-save",
+        "CSRF"
+      ],
+      "provider": "local mock; no real model credentials used"
+    },
+    "browser_1.19.0": {
+      "base": "http://127.0.0.1:18019",
+      "checks": [
+        "native UI generation through background job; one saved reply",
+        "regenerate replaces one reply",
+        "confirmed transient failure retries once",
+        "browser close, server save and reconnect",
+        "native stop cancels server job",
+        "Korean settings and live capabilities",
+        "job history dialog",
+        "390px mobile settings layout"
+      ],
+      "pageErrors": [],
+      "provider": "local mock only"
+    },
+    "browser_1.18.0": {
+      "base": "http://127.0.0.1:18018",
+      "checks": [
+        "native UI generation through background job; one saved reply",
+        "regenerate replaces one reply",
+        "confirmed transient failure retries once",
+        "browser close, server save and reconnect",
+        "native stop cancels server job",
+        "Korean settings and live capabilities",
+        "job history dialog",
+        "390px mobile settings layout"
+      ],
+      "pageErrors": [],
+      "provider": "local mock only"
+    },
+    "message_ui_1.19.0": {
+      "base": "http://127.0.0.1:18019",
+      "checks": [
+        "65 messages remain in memory after native reload",
+        "message manager pages at 30",
+        "message edit cancel leaves original",
+        "message edit and current swipe persist through reload",
+        "legitimate shorter disk chat is never restored over",
+        "failed reload restores visible snapshot without overwriting file",
+        "lazy theme hydration uses native applyTheme"
+      ],
+      "pageErrors": []
+    },
+    "message_ui_1.18.0": {
+      "base": "http://127.0.0.1:18018",
+      "checks": [
+        "65 messages remain in memory after native reload",
+        "message manager pages at 30",
+        "message edit cancel leaves original",
+        "message edit and current swipe persist through reload",
+        "legitimate shorter disk chat is never restored over",
+        "failed reload restores visible snapshot without overwriting file",
+        "lazy theme hydration uses native applyTheme"
+      ],
+      "pageErrors": []
+    }
+  }
+}

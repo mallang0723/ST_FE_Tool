@@ -1,0 +1,566 @@
+<div class="bai_bai_toolkit_settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>{{ko:settings.0}}<small class="bai_bai_toolkit_update_badge"
+                    style="display: none; color: var(--SmartThemeBodyColor); background: var(--SmartThemeQuoteColor); border-radius: 4px; padding: 2px 4px; margin-left: 4px; font-size: 0.8em;">new</small></b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content" style="padding-top: 5px;">
+            <div class="flex-container flexFlowColumn" style="gap: 5px;">
+                <div class="bai_bai_toolkit_version_info flex-container justifySpaceBetween alignItemCenter"
+                    style="margin-bottom: 5px; padding: 0 5px;">
+                    <div class="flex-container alignItemCenter flexGap5" style="opacity: 0.8; font-size: 0.9em;">
+                        <span>v<span class="bai_bai_toolkit_current_version"></span></span>
+                        <span style="opacity: 0.5;">|</span>
+                        <span>by 柏柏</span>
+                    </div>
+                    <div class="bai_bai_toolkit_update_container flex-container alignItemCenter">
+                        <span class="bai_bai_toolkit_update_status" style="margin-right: 10px; opacity: 0.7;"></span>
+                        <div class="menu_button menu_button_icon bai_bai_toolkit_update_button" style="display: none;"
+                            title="{{ko:settings.1}}">
+                            <i class="fa-solid fa-download"></i>
+                            <span>{{ko:settings.2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 导航栏 -->
+                <div class="bai_bai_toolkit_tabs flex-container"
+                    style="border-bottom: 1px solid var(--SmartThemeBorderColor); gap: 4px; margin-bottom: 10px; margin-top: 5px;">
+                    <div class="bai_bai_toolkit_tab active" data-target="bai_bai_toolkit_tab_optimizations"
+                        style="flex: 1; text-align: center; color: var(--SmartThemeQuoteColor); border-bottom: 2px solid var(--SmartThemeQuoteColor); padding: 8px 12px; cursor: pointer; opacity: 1; transition: all 0.2s ease;">
+                        <i class="fa-solid fa-rocket"></i> {{ko:settings.3}}
+                    </div>
+                    <div class="bai_bai_toolkit_tab" data-target="bai_bai_toolkit_tab_features"
+                        style="flex: 1; text-align: center; border-bottom: 2px solid transparent; padding: 8px 12px; cursor: pointer; opacity: 0.6; transition: all 0.2s ease;">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> {{ko:settings.4}}
+                    </div>
+                    <div class="bai_bai_toolkit_tab" data-target="bai_bai_toolkit_tab_baibaoku"
+                        style="flex: 1; text-align: center; border-bottom: 2px solid transparent; padding: 8px 12px; cursor: pointer; opacity: 0.6; transition: all 0.2s ease;">
+                        <i class="fa-solid fa-box-archive"></i> {{ko:settings.5}}
+                    </div>
+                </div>
+
+                <!-- 性能优化 (Optimizations) - 默认显示 -->
+                <div id="bai_bai_toolkit_tab_optimizations" class="bai_bai_toolkit_tab_content">
+                    <!-- 1. 聊天优化 -->
+                    <fieldset
+                        style="border: 1px solid var(--SmartThemeBorderColor); border-radius: 5px; padding: 8px; margin-bottom: 10px;">
+                        <legend style="font-size: 0.9em; font-weight: bold; opacity: 0.8;"><i
+                                class="fa-solid fa-comments"></i> {{ko:settings.6}}</legend>
+                        <div class="flex-container flexFlowColumn" style="gap: 5px;">
+                            <label class="checkbox_label" for="bai_bai_toolkit_welcome_recent_chat_direct_open_enabled"
+                                title="{{ko:settings.7}}">
+                                <input id="bai_bai_toolkit_welcome_recent_chat_direct_open_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.8}}</span>
+                            </label>
+                            <label class="checkbox_label"
+                                for="bai_bai_toolkit_long_chat_dom_render_optimization_enabled"
+                                title="{{ko:settings.9}}">
+                                <input id="bai_bai_toolkit_long_chat_dom_render_optimization_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.10}}</span>
+                            </label>
+                            <label class="checkbox_label"
+                                for="bai_bai_toolkit_reduce_loaded_floors_enabled"
+                                title="{{ko:settings.11}}">
+                                <input id="bai_bai_toolkit_reduce_loaded_floors_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.12}}</span>
+                            </label>
+                            <label class="checkbox_label"
+                                for="bai_bai_toolkit_message_completion_scroll_to_middle_enabled"
+                                title="{{ko:settings.13}}">
+                                <input id="bai_bai_toolkit_message_completion_scroll_to_middle_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.14}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_fast_chat_list_enabled"
+                                title="{{ko:settings.15}}">
+                                <input id="bai_bai_toolkit_fast_chat_list_enabled" type="checkbox" class="checkbox">
+                                <span>{{ko:settings.16}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_chat_list_scroll_optimization_enabled"
+                                title="{{ko:settings.17}}">
+                                <input id="bai_bai_toolkit_chat_list_scroll_optimization_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.18}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_chat_list_auto_clear_enabled"
+                                title="{{ko:settings.19}}">
+                                <input id="bai_bai_toolkit_chat_list_auto_clear_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.20}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_chat_loss_mitigation_enabled"
+                                title="{{ko:settings.21}}">
+                                <input id="bai_bai_toolkit_chat_loss_mitigation_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.22}}</span>
+                            </label>
+                            <label class="checkbox_label"
+                                for="bai_bai_toolkit_chat_delete_edit_flow_optimization_enabled"
+                                title="{{ko:settings.23}}">
+                                <input id="bai_bai_toolkit_chat_delete_edit_flow_optimization_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.24}}</span>
+                            </label>
+                            <label class="checkbox_label"
+                                for="bai_bai_toolkit_translate_message_updated_optimization_enabled"
+                                title="{{ko:settings.25}}">
+                                <input id="bai_bai_toolkit_translate_message_updated_optimization_enabled"
+                                    type="checkbox" class="checkbox">
+                                <span>{{ko:settings.26}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_resize_guard_enabled"
+                                title="{{ko:settings.27}}">
+                                <input id="bai_bai_toolkit_resize_guard_enabled" type="checkbox" class="checkbox">
+                                <span>{{ko:settings.28}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_mobile_auto_keyboard_suppression_enabled"
+                                title="{{ko:settings.29}}">
+                                <input id="bai_bai_toolkit_mobile_auto_keyboard_suppression_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.30}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_mobile_message_edit_scroll_guard_enabled"
+                                title="{{ko:settings.31}}">
+                                <input id="bai_bai_toolkit_mobile_message_edit_scroll_guard_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.32}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_message_edit_bottom_actions_enabled"
+                                title="{{ko:settings.33}}">
+                                <input id="bai_bai_toolkit_message_edit_bottom_actions_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.34}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_save_request_gzip_enabled"
+                                title="{{ko:settings.35}}">
+                                <input id="bai_bai_toolkit_save_request_gzip_enabled" type="checkbox" class="checkbox">
+                                <span>{{ko:settings.36}}</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- 2. 预设优化 -->
+                    <fieldset
+                        style="border: 1px solid var(--SmartThemeBorderColor); border-radius: 5px; padding: 8px; margin-bottom: 10px;">
+                        <legend style="font-size: 0.9em; font-weight: bold; opacity: 0.8;"><i
+                                class="fa-solid fa-sliders"></i> {{ko:settings.37}}</legend>
+                        <div class="flex-container flexFlowColumn" style="gap: 5px;">
+                            <label class="checkbox_label" for="bai_bai_toolkit_preset_prompt_codemirror_editor_enabled"
+                                title="{{ko:settings.38}}">
+                                <input id="bai_bai_toolkit_preset_prompt_codemirror_editor_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.39}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_preset_scroll_optimization_enabled"
+                                title="{{ko:settings.40}}">
+                                <input id="bai_bai_toolkit_preset_scroll_optimization_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.41}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_preset_interface_collapse_enabled"
+                                title="{{ko:settings.42}}">
+                                <input id="bai_bai_toolkit_preset_interface_collapse_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.43}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_preset_drag_optimization_enabled"
+                                title="{{ko:settings.44}}">
+                                <input id="bai_bai_toolkit_preset_drag_optimization_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.45}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_preset_mobile_whole_row_drag_enabled"
+                                title="{{ko:settings.46}}">
+                                <input id="bai_bai_toolkit_preset_mobile_whole_row_drag_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.47}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_preset_switch_optimization_enabled"
+                                title="{{ko:settings.48}}">
+                                <input id="bai_bai_toolkit_preset_switch_optimization_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.49}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_preset_toggle_optimization_enabled"
+                                title="{{ko:settings.50}}">
+                                <input id="bai_bai_toolkit_preset_toggle_optimization_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.51}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_preset_grouping_enabled"
+                                title="{{ko:settings.52}}">
+                                <input id="bai_bai_toolkit_preset_grouping_enabled" type="checkbox" class="checkbox">
+                                <span>{{ko:settings.53}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_preset_grouping_edit_button_in_menu_enabled"
+                                title="{{ko:settings.54}}">
+                                <input id="bai_bai_toolkit_preset_grouping_edit_button_in_menu_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.55}}</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- 3. 其他优化 -->
+                    <fieldset
+                        style="border: 1px solid var(--SmartThemeBorderColor); border-radius: 5px; padding: 8px; margin-bottom: 10px;">
+                        <legend style="font-size: 0.9em; font-weight: bold; opacity: 0.8;"><i
+                                class="fa-solid fa-desktop"></i> {{ko:settings.56}}</legend>
+                        <div class="flex-container flexFlowColumn" style="gap: 5px;">
+                            <label class="checkbox_label" for="bai_bai_toolkit_regex_quick_operation_enabled"
+                                title="{{ko:settings.57}}">
+                                <input id="bai_bai_toolkit_regex_quick_operation_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.58}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_description_codemirror_editor_enabled"
+                                title="{{ko:settings.59}}">
+                                <input id="bai_bai_toolkit_description_codemirror_editor_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.60}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_custom_css_input_optimization_enabled"
+                                title="{{ko:settings.61}}">
+                                <input id="bai_bai_toolkit_custom_css_input_optimization_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.62}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_custom_css_shadow_property_enabled"
+                                title="{{ko:settings.63}}">
+                                <input id="bai_bai_toolkit_custom_css_shadow_property_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.64}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_world_info_drawer_optimization_enabled"
+                                title="{{ko:settings.65}}">
+                                <input id="bai_bai_toolkit_world_info_drawer_optimization_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.66}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_world_info_list_optimization_enabled"
+                                title="{{ko:settings.67}}">
+                                <input id="bai_bai_toolkit_world_info_list_optimization_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.68}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_world_info_search_replace_enabled"
+                                title="{{ko:settings.69}}">
+                                <input id="bai_bai_toolkit_world_info_search_replace_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.70}}</span>
+                            </label>
+                            <label class="checkbox_label"
+                                for="bai_bai_toolkit_character_search_input_optimization_enabled"
+                                title="{{ko:settings.71}}">
+                                <input id="bai_bai_toolkit_character_search_input_optimization_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.72}}</span>
+                            </label>
+
+                            <label class="checkbox_label" for="bai_bai_toolkit_character_list_avatar_lazy_load_enabled"
+                                title="{{ko:settings.73}}">
+                                <input id="bai_bai_toolkit_character_list_avatar_lazy_load_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.74}}</span>
+                            </label>
+
+                            <div class="bai_bai_toolkit_perf_trace flex-container flexFlowColumn"
+                                style="display: none !important;" aria-hidden="true"
+                                style="gap: 6px; padding: 6px 5px;">
+                                <div class="flex-container alignItemCenter flexGap5">
+                                    <span style="opacity: 0.8;">Performance trace</span>
+                                    <div id="bai_bai_toolkit_perf_trace_start" class="menu_button menu_button_icon"
+                                        title="Start recording filtered performance diagnostics.">
+                                        <i class="fa-solid fa-circle-play"></i>
+                                        <span>Start</span>
+                                    </div>
+                                    <div id="bai_bai_toolkit_perf_trace_stop"
+                                        class="menu_button menu_button_icon disabled"
+                                        title="Stop recording and export a txt diagnostics file.">
+                                        <i class="fa-solid fa-file-export"></i>
+                                        <span>Stop &amp; Export TXT</span>
+                                    </div>
+                                </div>
+                                <small id="bai_bai_toolkit_perf_trace_status" style="opacity: 0.7;">idle</small>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- 柏宝库 (BaiBaoKu) - 默认隐藏 -->
+                <div id="bai_bai_toolkit_tab_baibaoku" class="bai_bai_toolkit_tab_content"
+                    style="display: none; padding-top: 5px;">
+                    <fieldset
+                        style="border: 1px solid var(--SmartThemeBorderColor); border-radius: 5px; padding: 8px; margin-bottom: 10px;">
+                        <legend style="font-size: 0.9em; font-weight: bold; opacity: 0.8;"><i
+                                class="fa-solid fa-box-archive"></i> {{ko:settings.5}}</legend>
+                        <div class="flex-container flexFlowColumn" style="gap: 5px;">
+                            <div
+                                style="border: 1px solid var(--SmartThemeBorderColor); border-radius: 5px; padding: 6px 8px; margin-bottom: 4px;">
+                                <div
+                                    style="display: grid; grid-template-columns: minmax(0, 1fr) 7.4em; gap: 8px; align-items: start;">
+                                    <div class="flex-container flexFlowColumn" style="gap: 4px; min-width: 0;">
+                                        <span style="font-weight: bold; opacity: 0.85;">{{ko:settings.75}}</span>
+                                        <div class="flex-container flexFlowColumn"
+                                            style="gap: 2px; font-size: 0.9em; opacity: 0.9;">
+                                            <div>{{ko:settings.76}}<span id="bai_bai_toolkit_baibaoku_server_status">{{ko:settings.77}}</span></div>
+                                            <div>{{ko:settings.78}}<span id="bai_bai_toolkit_baibaoku_driver_status">{{ko:settings.77}}</span></div>
+                                            <div>초기 연결: <span
+                                                    id="bai_bai_toolkit_baibaoku_bridge_status">{{ko:settings.77}}</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-container flexFlowColumn alignItemCenter"
+                                        style="gap: 5px; justify-self: end;">
+                                        <div id="bai_bai_toolkit_baibaoku_refresh_status"
+                                            class="menu_button menu_button_icon" style="width: 100%; white-space: nowrap;" title="{{ko:settings.79}}">
+                                            <i class="fa-solid fa-rotate"></i>
+                                            <span>{{ko:settings.80}}</span>
+                                        </div>
+                                        <div id="bai_bai_toolkit_baibaoku_install_help"
+                                            class="menu_button menu_button_icon" style="width: 100%; white-space: nowrap;" title="{{ko:settings.81}}">
+                                            <i class="fa-solid fa-circle-question"></i>
+                                            <span>{{ko:settings.81}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="checkbox_label" for="bai_bai_toolkit_baibaoku_settings_acceleration_enabled"
+                                title="{{ko:settings.82}}">
+                                <input id="bai_bai_toolkit_baibaoku_settings_acceleration_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.83}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_baibaoku_lazy_theme_loading_enabled"
+                                title="{{ko:settings.84}}">
+                                <input id="bai_bai_toolkit_baibaoku_lazy_theme_loading_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.85}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_extension_manifest_bundle_enabled"
+                                title="{{ko:settings.86}}">
+                                <input id="bai_bai_toolkit_extension_manifest_bundle_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.87}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_fast_character_list_enabled"
+                                title="{{ko:settings.88}}">
+                                <input id="bai_bai_toolkit_fast_character_list_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.89}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_recent_chat_list_acceleration_enabled"
+                                title="{{ko:settings.90}}">
+                                <input id="bai_bai_toolkit_recent_chat_list_acceleration_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.91}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_progressive_chat_loading_enabled"
+                                title="{{ko:settings.92}}">
+                                <input id="bai_bai_toolkit_progressive_chat_loading_enabled" type="checkbox"
+                                    class="checkbox" disabled>
+                                <span>{{ko:settings.93}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_save_generate_enabled"
+                                title="{{ko:settings.94}}">
+                                <input id="bai_bai_toolkit_save_generate_enabled" type="checkbox" class="checkbox">
+                                <span>{{ko:settings.95}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_preset_auto_backup_enabled"
+                                title="{{ko:settings.96}}">
+                                <input id="bai_bai_toolkit_preset_auto_backup_enabled" type="checkbox" class="checkbox">
+                                <span>{{ko:settings.97}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_preset_backup_auto_cleanup_enabled"
+                                title="{{ko:settings.98}}">
+                                <input id="bai_bai_toolkit_preset_backup_auto_cleanup_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.99}}</span>
+                            </label>
+                            <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; min-width: 0;">
+                                <label for="bai_bai_toolkit_preset_backup_keep_count" style="overflow-wrap: anywhere;">{{ko:settings.100}}</label>
+                                <input id="bai_bai_toolkit_preset_backup_keep_count" type="number" min="1" step="1"
+                                    inputmode="numeric" class="text_pole" style="width: 7em; max-width: 100%; margin: 0;"
+                                    title="{{ko:settings.101}}">
+                            </div>
+                            <small id="bai_bai_toolkit_preset_backup_cleanup_status" role="status" hidden
+                                style="overflow-wrap: anywhere;"></small>
+                            <label class="checkbox_label" for="bai_bai_toolkit_tokenizer_bulk_count_enabled"
+                                title="{{ko:settings.102}}">
+                                <input id="bai_bai_toolkit_tokenizer_bulk_count_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.103}}</span>
+                            </label>
+                            <label class="checkbox_label" for="bai_bai_toolkit_chat_keyboard_scan_reduction_enabled"
+                                title="{{ko:settings.104}}">
+                                <input id="bai_bai_toolkit_chat_keyboard_scan_reduction_enabled" type="checkbox"
+                                    class="checkbox">
+                                <span>{{ko:settings.105}}</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- 附加功能 (Features) - 默认隐藏 -->
+                <div id="bai_bai_toolkit_tab_features" class="bai_bai_toolkit_tab_content"
+                    style="display: none; padding-top: 5px;">
+                    <div class="flex-container flexFlowColumn" style="gap: 5px;">
+                        <fieldset
+                            style="border: 1px solid var(--SmartThemeBorderColor); border-radius: 5px; padding: 8px; margin-bottom: 10px;">
+                            <legend style="font-size: 0.9em; font-weight: bold; opacity: 0.8;"><i
+                                    class="fa-solid fa-volume-high"></i> {{ko:settings.106}}</legend>
+                            <div class="flex-container flexFlowColumn" style="gap: 8px;">
+                                <div class="flex-container justifySpaceBetween alignItemCenter"
+                                    style="gap: 8px; align-items: center;">
+                                    <label class="checkbox_label" for="bai_bai_toolkit_message_completion_sound_enabled"
+                                        style="align-items: center;" title="{{ko:settings.107}}">
+                                        <input id="bai_bai_toolkit_message_completion_sound_enabled" type="checkbox"
+                                            class="checkbox">
+                                        <span>{{ko:settings.108}}</span>
+                                    </label>
+                                    <div id="bai_bai_toolkit_message_completion_sound_preview"
+                                        class="menu_button menu_button_icon" style="align-items: center;"
+                                        title="{{ko:settings.109}}">
+                                        <i class="fa-solid fa-play"></i>
+                                        <span>{{ko:settings.110}}</span>
+                                    </div>
+                                </div>
+
+                                <label class="checkbox_label"
+                                    for="bai_bai_toolkit_message_completion_sound_keep_alive_enabled"
+                                    style="align-items: center;" title="{{ko:settings.111}}">
+                                    <input id="bai_bai_toolkit_message_completion_sound_keep_alive_enabled"
+                                        type="checkbox" class="checkbox">
+                                    <span>{{ko:settings.112}}</span>
+                                </label>
+
+                                <label class="flex-container alignItemCenter flexGap5"
+                                    for="bai_bai_toolkit_message_completion_sound_source" style="align-items: center;">
+                                    <span style="min-width: 72px;">{{ko:settings.113}}</span>
+                                    <select id="bai_bai_toolkit_message_completion_sound_source" class="text_pole"
+                                        style="flex: 1;">
+                                        <option value="builtin">{{ko:settings.114}}</option>
+                                        <option value="url">{{ko:settings.115}}</option>
+                                        <option value="local">{{ko:settings.116}}</option>
+                                    </select>
+                                </label>
+
+                                <div id="bai_bai_toolkit_message_completion_sound_builtin_row"
+                                    class="flex-container alignItemCenter flexGap5" style="align-items: center;">
+                                    <label for="bai_bai_toolkit_message_completion_sound_builtin_id"
+                                        style="min-width: 72px; align-items: center;">{{ko:settings.114}}</label>
+                                    <select id="bai_bai_toolkit_message_completion_sound_builtin_id" class="text_pole"
+                                        style="flex: 1;"></select>
+                                </div>
+
+                                <div id="bai_bai_toolkit_message_completion_sound_url_row"
+                                    class="flex-container alignItemCenter flexGap5"
+                                    style="display: none; align-items: center;">
+                                    <label for="bai_bai_toolkit_message_completion_sound_url"
+                                        style="min-width: 72px; align-items: center;">{{ko:settings.115}}</label>
+                                    <input id="bai_bai_toolkit_message_completion_sound_url" class="text_pole"
+                                        type="url" placeholder="https://example.com/sound.mp3" style="flex: 1;">
+                                </div>
+
+                                <div id="bai_bai_toolkit_message_completion_sound_local_row"
+                                    class="flex-container flexFlowColumn" style="display: none; gap: 5px;">
+                                    <div class="flex-container alignItemCenter flexGap5" style="align-items: center;">
+                                        <label for="bai_bai_toolkit_message_completion_sound_local_file"
+                                            style="min-width: 72px; align-items: center;">{{ko:settings.116}}</label>
+                                        <input id="bai_bai_toolkit_message_completion_sound_local_file" type="file"
+                                            accept="audio/*" style="flex: 1;">
+                                    </div>
+                                    <div class="flex-container alignItemCenter flexGap5"
+                                        style="font-size: 0.9em; opacity: 0.85; align-items: center;">
+                                        <span style="min-width: 72px;">{{ko:settings.117}}</span>
+                                        <span id="bai_bai_toolkit_message_completion_sound_local_name"
+                                            style="flex: 1;">{{ko:settings.118}}</span>
+                                        <div id="bai_bai_toolkit_message_completion_sound_local_clear"
+                                            class="menu_button menu_button_icon" style="align-items: center;"
+                                            title="{{ko:settings.119}}">
+                                            <i class="fa-solid fa-trash"></i>
+                                            <span>{{ko:settings.120}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <label class="flex-container alignItemCenter flexGap5"
+                                    for="bai_bai_toolkit_message_completion_sound_volume" style="align-items: center;">
+                                    <span style="min-width: 72px;">{{ko:settings.121}}</span>
+                                    <input id="bai_bai_toolkit_message_completion_sound_volume" type="range" min="0"
+                                        max="1" step="0.05" style="flex: 1;">
+                                    <span id="bai_bai_toolkit_message_completion_sound_volume_value"
+                                        style="width: 42px; text-align: right;"></span>
+                                </label>
+
+                                <small id="bai_bai_toolkit_message_completion_sound_status"
+                                    style="opacity: 0.7;"></small>
+                            </div>
+                        </fieldset>
+                        <fieldset
+                            style="border: 1px solid var(--SmartThemeBorderColor); border-radius: 5px; padding: 8px; margin-bottom: 10px;">
+                            <legend style="font-size: 0.9em; font-weight: bold; opacity: 0.8;"><i
+                                    class="fa-solid fa-rotate-right"></i> {{ko:settings.122}}</legend>
+                            <div class="flex-container flexFlowColumn" style="gap: 8px;">
+                                <label class="checkbox_label" for="bai_bai_toolkit_generate_retry_enabled"
+                                    style="align-items: center;"
+                                    title="{{ko:settings.123}}">
+                                    <input id="bai_bai_toolkit_generate_retry_enabled" type="checkbox" class="checkbox">
+                                    <span>{{ko:settings.124}}</span>
+                                </label>
+                                <label class="flex-container alignItemCenter flexGap5"
+                                    for="bai_bai_toolkit_generate_retry_max_retries" style="align-items: center;"
+                                    title="{{ko:settings.125}}">
+                                    <span style="min-width: 84px;">{{ko:settings.126}}</span>
+                                    <input id="bai_bai_toolkit_generate_retry_max_retries" class="text_pole"
+                                        type="number" min="1" max="10" step="1" style="flex: 1;">
+                                </label>
+                                <hr style="width: 100%; margin: 0;">
+                                <label class="checkbox_label" for="bai_bai_toolkit_generate_blacklist_retry_enabled"
+                                    style="align-items: center;"
+                                    title="{{ko:settings.127}}">
+                                    <input id="bai_bai_toolkit_generate_blacklist_retry_enabled" type="checkbox" class="checkbox">
+                                    <span>{{ko:settings.128}}</span>
+                                </label>
+                                <textarea id="bai_bai_toolkit_generate_blacklist_retry_text"
+                                    class="text_pole" rows="5" aria-label="{{ko:settings.129}}"
+                                    style="display: none; width: 100%; min-width: 0; box-sizing: border-box; resize: vertical;"
+                                    title="{{ko:settings.130}}"
+                                    placeholder="{{ko:settings.131}}"></textarea>
+                            </div>
+                        </fieldset>
+                        <label class="checkbox_label" for="bai_bai_toolkit_update_prompt_on_available_enabled"
+                            title="{{ko:settings.132}}">
+                            <input id="bai_bai_toolkit_update_prompt_on_available_enabled" type="checkbox"
+                                class="checkbox">
+                            <span>{{ko:settings.133}}</span>
+                        </label>
+                        <label class="checkbox_label" for="bai_bai_toolkit_message_double_click_edit_enabled"
+                            title="{{ko:settings.134}}">
+                            <input id="bai_bai_toolkit_message_double_click_edit_enabled" type="checkbox"
+                                class="checkbox">
+                            <span>{{ko:settings.135}}</span>
+                        </label>
+                        <label class="checkbox_label" for="bai_bai_toolkit_message_triple_click_edit_enabled"
+                            title="{{ko:settings.136}}">
+                            <input id="bai_bai_toolkit_message_triple_click_edit_enabled" type="checkbox"
+                                class="checkbox">
+                            <span>{{ko:settings.137}}</span>
+                        </label>
+                        <label class="checkbox_label" for="bai_bai_toolkit_preset_auto_save_after_prompt_edit_enabled"
+                            title="{{ko:settings.138}}">
+                            <input id="bai_bai_toolkit_preset_auto_save_after_prompt_edit_enabled" type="checkbox"
+                                class="checkbox">
+                            <span>{{ko:settings.139}}</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

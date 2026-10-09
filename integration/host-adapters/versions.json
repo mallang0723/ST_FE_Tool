@@ -1,0 +1,242 @@
+{
+  "1.18.0": {
+    "commit": "51ad27fb86d39a3daca3adaa970375c9670c12df",
+    "files": {
+      "public/index.html": {
+        "sha256": "1eccc894791ef961db5a80d01bb517256843d86f720664f2cf5ff8f55f100122",
+        "patchedSha256": "3bb4aee116da54ad6e5e7499d555c14e755e6a1b04e4c04474ec575fbf19b5d9",
+        "edits": [
+          {
+            "before": "<script type=\"module\" src=\"script.js\"></script>",
+            "after": "<!-- damso-tools:early -->\n    <script src=\"/api/plugins/st-ko-tools/v1/assets/early-bridge.js\"></script>\n    <script type=\"module\" src=\"script.js\"></script>",
+            "start": 733981
+          }
+        ]
+      },
+      "src/endpoints/chats.js": {
+        "sha256": "5a7ba044c2ee5466c016146caa50369b24ffc76c189f0da5e99e61e62784214f",
+        "patchedSha256": "e066c04330249fa2d3575f6d67e95806278877a6976ee2442512c1c78f9c2d38",
+        "edits": [
+          {
+            "before": "export const router = express.Router();",
+            "after": "import { installChatCoordination } from '../damso-chat-coordinator.mjs';\nexport const router = express.Router();\ninstallChatCoordination(router);",
+            "start": 14284
+          }
+        ]
+      },
+      "src/endpoints/backends/chat-completions.js": {
+        "sha256": "43b70de92b41d0992a957589863b29c7342849e1201ae08c3c26cba6844cf052",
+        "patchedSha256": "2bd08eb2ab4f8d63d4600e639a82b12e0576134d47d31df56ab61c5beae97aeb",
+        "edits": [
+          {
+            "before": "});\n\nconst multimodalModels = express.Router();\n\nmultimodalModels.post('/pollinations', async (_req, re",
+            "after": "}\nrouter.post('/generate', damsoGenerate);\n\nconst multimodalModels = express.Router();\n\nmultimodalModels.post('/pollinations', async (_req, re",
+            "start": 113187
+          },
+          {
+            "start": 112808,
+            "before": "console.error('Generation failed', error);",
+            "after": "if (!request.damsoBackground) console.error('Generation failed', error);"
+          },
+          {
+            "before": "response.send({ error: { message }, quota_error: quota_error });",
+            "after": "if (request.damsoBackground) response.status(fetchResponse.status);\n                response.send({ error: { message }, quota_error: quota_error });",
+            "start": 112540
+          },
+          {
+            "start": 112409,
+            "before": "console.error('Chat completion request error: ', message, responseText);",
+            "after": "if (!request.damsoBackground) console.error('Chat completion request error: ', message, responseText);"
+          },
+          {
+            "start": 111979,
+            "before": "console.debug('Chat Completion response:', json);",
+            "after": "if (!request.damsoBackground) console.debug('Chat Completion response:', json);"
+          },
+          {
+            "start": 111721,
+            "before": "console.info('Streaming request in progress');",
+            "after": "if (!request.damsoBackground) console.info('Streaming request in progress');"
+          },
+          {
+            "start": 111552,
+            "before": "console.debug('Chat Completion request:', requestBody);",
+            "after": "if (!request.damsoBackground) console.debug('Chat Completion request:', requestBody);"
+          },
+          {
+            "start": 108630,
+            "before": "console.warn('OpenAI API key is missing.');",
+            "after": "if (!request.damsoBackground) console.warn('OpenAI API key is missing.');"
+          },
+          {
+            "start": 107278,
+            "before": "console.warn('This chat completion source is not supported yet.');",
+            "after": "if (!request.damsoBackground) console.warn('This chat completion source is not supported yet.');"
+          },
+          {
+            "start": 106655,
+            "before": "console.warn('Cloudflare Workers AI Account ID is missing.');",
+            "after": "if (!request.damsoBackground) console.warn('Cloudflare Workers AI Account ID is missing.');"
+          },
+          {
+            "start": 90538,
+            "before": "console.info('Applying custom prompt post-processing of type', postProcessingType);",
+            "after": "if (!request.damsoBackground) console.info('Applying custom prompt post-processing of type', postProcessingType);"
+          },
+          {
+            "before": "router.post('/generate', async function (request, response) {",
+            "after": "export async function damsoGenerate(request, response) {",
+            "start": 90222
+          }
+        ]
+      },
+      "public/scripts/power-user.js": {
+        "sha256": "2e082dc9c67f802072e7c42eed0a48b98d273f39b32749c774fab862115481e0",
+        "patchedSha256": "c82b5917fba7e6765c7f2d35f5c8618b86dec33e0fa3ff999988dff460b0d0e7",
+        "edits": [
+          {
+            "before": "let themes = [];",
+            "after": "let themes = [];\n// Damso: hydrate native theme objects and use the host's complete application path.\nglobalThis.damsoHydrateTheme = theme => {\n    const index = themes.findIndex(item => item.name === theme.name);\n    if (index < 0) themes.push(theme); else themes[index] = theme;\n};\nglobalThis.damsoApplyNativeTheme = name => applyTheme(name);\nglobalThis.damsoThemeNeedsHydration = name => themes.some(theme => theme.name === name && theme.damsoLazy);",
+            "start": 11866
+          }
+        ]
+      },
+      "public/scripts/keyboard.js": {
+        "sha256": "bf641135033099f3b98efdc22bc6f3b4995500400fd52f9dd630bf2906a1ec7c",
+        "patchedSha256": "2b64055aa9e985c88fbf106531306fed85d1dca0915527c135bc3d3c7c1e61c2",
+        "edits": [
+          {
+            "before": "export function makeKeyboardInteractable(...interactables) {\n    interactables.forEach(interactable => {",
+            "after": "export function makeKeyboardInteractable(...interactables) {\n    interactables.forEach(interactable => {\n        if (globalThis.__damsoEarlyBridge?.keyboardScanReductionActive && interactable.closest('#chat .mes')) { interactable.setAttribute('tabindex','-1'); return; }",
+            "start": 5910
+          },
+          {
+            "before": "function handleNodeChange(node) {",
+            "after": "function handleNodeChange(node) {\n    if (globalThis.__damsoEarlyBridge?.keyboardScanReductionActive && node instanceof Element && node.closest('#chat .mes')) return;",
+            "start": 3394
+          }
+        ]
+      }
+    }
+  },
+  "1.19.0": {
+    "commit": "06bde939fb1e9c4c8d8641d810f0a916b5bce127",
+    "files": {
+      "public/index.html": {
+        "sha256": "647c22a47feff92148c07a0f821bbd84feea7400e543085841a95a418679419f",
+        "patchedSha256": "f5f437f7e601af3118edb54ed3a69677c4a4622c7071994564a9a374bf225846",
+        "edits": [
+          {
+            "before": "<script type=\"module\" src=\"script.js\"></script>",
+            "after": "<!-- damso-tools:early -->\n    <script src=\"/api/plugins/st-ko-tools/v1/assets/early-bridge.js\"></script>\n    <script type=\"module\" src=\"script.js\"></script>",
+            "start": 734260
+          }
+        ]
+      },
+      "src/endpoints/chats.js": {
+        "sha256": "40012ebc71a75357e62f7532e5b20def0d8b6c132bb6ab48f662993cc97b9063",
+        "patchedSha256": "d6c711f246223457cec6f2133a466b287f4adcf97cbb5fd279ee5a429a1ecf5b",
+        "edits": [
+          {
+            "before": "export const router = express.Router();",
+            "after": "import { installChatCoordination } from '../damso-chat-coordinator.mjs';\nexport const router = express.Router();\ninstallChatCoordination(router);",
+            "start": 17683
+          }
+        ]
+      },
+      "src/endpoints/backends/chat-completions.js": {
+        "sha256": "53f429859efcfb29dd8becfebf7ff0ae49256ea795a0c81c320930fab5a407e7",
+        "patchedSha256": "c0c664149bac2cd0ec8917829d3a78cf3f672fc42e81edbecd7db642dd8cb58e",
+        "edits": [
+          {
+            "before": "});\n\nconst multimodalModels = express.Router();\n\nmultimodalModels.post('/pollinations', async (_req, re",
+            "after": "}\nrouter.post('/generate', damsoGenerate);\n\nconst multimodalModels = express.Router();\n\nmultimodalModels.post('/pollinations', async (_req, re",
+            "start": 118574
+          },
+          {
+            "start": 118195,
+            "before": "console.error('Generation failed', error);",
+            "after": "if (!request.damsoBackground) console.error('Generation failed', error);"
+          },
+          {
+            "before": "response.send({ error: { message }, quota_error: quota_error });",
+            "after": "if (request.damsoBackground) response.status(fetchResponse.status);\n                response.send({ error: { message }, quota_error: quota_error });",
+            "start": 117927
+          },
+          {
+            "start": 117796,
+            "before": "console.error('Chat completion request error: ', message, responseText);",
+            "after": "if (!request.damsoBackground) console.error('Chat completion request error: ', message, responseText);"
+          },
+          {
+            "start": 117366,
+            "before": "console.debug('Chat Completion response:', json);",
+            "after": "if (!request.damsoBackground) console.debug('Chat Completion response:', json);"
+          },
+          {
+            "start": 117108,
+            "before": "console.info('Streaming request in progress');",
+            "after": "if (!request.damsoBackground) console.info('Streaming request in progress');"
+          },
+          {
+            "start": 116939,
+            "before": "console.debug('Chat Completion request:', requestBody);",
+            "after": "if (!request.damsoBackground) console.debug('Chat Completion request:', requestBody);"
+          },
+          {
+            "start": 114017,
+            "before": "console.warn('OpenAI API key is missing.');",
+            "after": "if (!request.damsoBackground) console.warn('OpenAI API key is missing.');"
+          },
+          {
+            "start": 112665,
+            "before": "console.warn('This chat completion source is not supported yet.');",
+            "after": "if (!request.damsoBackground) console.warn('This chat completion source is not supported yet.');"
+          },
+          {
+            "start": 112042,
+            "before": "console.warn('Cloudflare Workers AI Account ID is missing.');",
+            "after": "if (!request.damsoBackground) console.warn('Cloudflare Workers AI Account ID is missing.');"
+          },
+          {
+            "start": 95146,
+            "before": "console.info('Applying custom prompt post-processing of type', postProcessingType);",
+            "after": "if (!request.damsoBackground) console.info('Applying custom prompt post-processing of type', postProcessingType);"
+          },
+          {
+            "before": "router.post('/generate', async function (request, response) {",
+            "after": "export async function damsoGenerate(request, response) {",
+            "start": 94830
+          }
+        ]
+      },
+      "public/scripts/power-user.js": {
+        "sha256": "bb62dd0116183cdc2a06a0cf98dd18496da1619c48254053bcf2c69ef97bcb7f",
+        "patchedSha256": "91cd3da4fdc695e9defca35d02237a378fdb910fac9ac270ea35eeba9d0d049d",
+        "edits": [
+          {
+            "before": "let themes = [];",
+            "after": "let themes = [];\n// Damso: hydrate native theme objects and use the host's complete application path.\nglobalThis.damsoHydrateTheme = theme => {\n    const index = themes.findIndex(item => item.name === theme.name);\n    if (index < 0) themes.push(theme); else themes[index] = theme;\n};\nglobalThis.damsoApplyNativeTheme = name => applyTheme(name);\nglobalThis.damsoThemeNeedsHydration = name => themes.some(theme => theme.name === name && theme.damsoLazy);",
+            "start": 11866
+          }
+        ]
+      },
+      "public/scripts/keyboard.js": {
+        "sha256": "bf641135033099f3b98efdc22bc6f3b4995500400fd52f9dd630bf2906a1ec7c",
+        "patchedSha256": "2b64055aa9e985c88fbf106531306fed85d1dca0915527c135bc3d3c7c1e61c2",
+        "edits": [
+          {
+            "before": "export function makeKeyboardInteractable(...interactables) {\n    interactables.forEach(interactable => {",
+            "after": "export function makeKeyboardInteractable(...interactables) {\n    interactables.forEach(interactable => {\n        if (globalThis.__damsoEarlyBridge?.keyboardScanReductionActive && interactable.closest('#chat .mes')) { interactable.setAttribute('tabindex','-1'); return; }",
+            "start": 5910
+          },
+          {
+            "before": "function handleNodeChange(node) {",
+            "after": "function handleNodeChange(node) {\n    if (globalThis.__damsoEarlyBridge?.keyboardScanReductionActive && node instanceof Element && node.closest('#chat .mes')) return;",
+            "start": 3394
+          }
+        ]
+      }
+    }
+  }
+}

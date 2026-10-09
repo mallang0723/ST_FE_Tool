@@ -1,0 +1,11 @@
+{
+    "display_name": "담소 도구함",
+    "loading_order": -1000,
+    "requires": [],
+    "optional": [],
+    "js": "dist/index.js?ver=0.1.0",
+    "author": "柏柏",
+    "version": "0.1.0",
+    "homePage": "",
+    "auto_update": false
+}

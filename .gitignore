@@ -1,0 +1,14 @@
+.codex-codemirror-build/
+node_modules/
+.npm-cache/
+.agents/
+.claude/
+.codex/
+.pi/
+.aionrs/
+Trace-*.json
+dist/*.map
+.preview/
+release/
+.host/
+test-results/
